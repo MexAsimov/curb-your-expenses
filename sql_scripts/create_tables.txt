@@ -1,0 +1,14 @@
+SET DATABASE 'curb_your_expenses_db';
+
+SET SCHEMA 'application_schema';
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE app_user(
+	id uuid DEFAULT uuid_generate_v4(),
+	first_name VARCHAR NOT NULL,
+	last_name VARCHAR NOT NULL,
+	email VARCHAR NOT NULL,
+	password VARCHAR NOT NULL,
+	PRIMARY KEY (id)
+);
